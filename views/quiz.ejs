@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0d0d">
+    <title>quiz</title>
+    <link rel="icon" href="/images/favicon.jpeg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/quiz.css">
+</head>
+
+<body>
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+
+    <div class="container">
+        <!-- Main content -->
+        <main class="main-content">
+            <section>
+
+                <!-- FIRST SCREEN  -->
+                <div class="first-screen">
+                    <header class="top-bar">
+                        <a href="/dashboard" class="back">
+                            <div><i class="ri-arrow-left-line"></i></div>
+                        </a>
+                    </header>
+
+                    <div class="main">
+                        <div class="first-main">
+                            <div>
+                                <p class="title">Balance</p>
+                                <div class="balance">$0.00</div>
+
+                                <div class="reward">
+                                    <p class="quiz-day" id="quizDay"></p>
+                                    <h1 class="quiz-title">Super Quiz</h1>
+                                    <p class="subtitle">Play Super Quiz & earn <span class="highlight">200 coins</span>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="quiz-info">
+                                <p class="quiz-topic-label">Today's Quiz on (v-v)</p>
+                                <p class="quiz-topic-label">This Quiz ends in every 24 hour</p>
+
+                                <div class="countdown" id="countdown">
+                                    <div><span id="hours">00</span><small>Hours</small></div>
+                                    <div><span id="minutes">00</span><small>Minutes</small></div>
+                                    <div><span id="seconds">00</span><small>Seconds</small></div>
+                                </div>
+                                <p class="quiz-topic-label">💰 70k coins distributed till now</p>
+                            </div>
+
+                            <button class="play-btn">Play Quiz</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- SECOUND SCREEN  -->
+                <div class="second-screen">
+                    <div class="quiz-container">
+                        <div class="progress">
+                            <h1 id="questionNumber">.1</h1>
+                        </div>
+
+                        <div class="question-box">
+                            <p class="question-text">
+                                <!-- Question will go here dynamically -->
+                            </p>
+                            <div class="options" id="optionsContainer">
+                                <!-- options will go here dynamically -->
+                            </div>
+                            <div class="btn">
+                                <button id="back" style="display: none;">Go Back</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- THIRD SCREEN -->
+                <div class="third-screen" style="display: none;">
+                    <div class="third-center">
+                        <p id="resultMessage"></p> <br>
+                        <p id="prizeAmount"></p> <br>
+                        <button id="claimButton" style="display: none;">Claim Your Prize</button>
+                        <button id="backButton" style="display: none;">Go Back</button>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+    <!-- BACKGROUND BLUR -->
+    <span class="footer__blur"></span>
+
+
+    <script>
+        const user = { name: "<%= user.name %>" };
+    </script>
+
+    <!-- FOR MY MANIFEST  -->
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/quiz.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<header class="header1">
+    <div class="profile-summary">
+        <div class="profile-img-wrapper">
+            <div class="profile-initials">
+              <% 
+                const nameParts = user.name.trim().split(' ');
+                const initials = nameParts[0][0] + (nameParts[1] ? nameParts[1][0] : '');
+              %>
+              <%= initials.toUpperCase() %>
+            </div>
+          </div>
+        <div>
+            <div>
+                <h2>
+                    <%= user.name %>
+                </h2>
+
+                <p>
+                    <%= user.email %>
+                </p>
+            </div>
+        </div>
+</header>

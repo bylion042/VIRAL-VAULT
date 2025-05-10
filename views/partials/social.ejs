@@ -1,0 +1,86 @@
+<div class="account1">
+    <a href="/dashboard" class="back">
+        <div><i class="ri-arrow-left-line"></i></div>
+    </a>
+
+    <div class="account-card">
+        <div class="card-header">
+            <h3>Available Balance</h3>
+            <p class="zoom-animation">DUE</p>    
+        </div>
+
+        <div class="points">
+            <h1 id="balance">$0.00</h1>
+            <p class="bonus">focus on the colors</p>
+            <p class="bonus">click the button bellow to withdraw</p>
+        </div>
+
+        <div class="card-actions">
+            <button class="withdraw-btn">
+                <i class="ri-wallet-3-fill"></i>My Referals
+            </button>
+
+            <button class="pay-btn">
+                <i class="ri-wallet-3-fill"></i>Social Task
+            </button>
+        </div>
+    </div>
+
+
+
+    <h2>Social Tasks</h2>
+
+    <div class="social-rewards">
+        <div class="header">
+            <p>Earn Rewards by Completing Simple Tasks!</p>
+        </div>
+
+        <div class="slider-container">
+            <div class="platforms-wrapper" id="platformsWrapper">
+                <!-- Slide 1 -->
+                <div class="platforms">
+                    <div class="platforms">
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-instagram-line"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-facebook-fill"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-youtube-fill"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-twitter-fill"></i><button>Follow</button></div>
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-tiktok-fill"></i><button>Follow</button></div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="platforms">
+                    <div class="platforms">
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-instagram-line"></i><button>Like</button></div>
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-tiktok-fill"></i><button>Like</button></div>
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-youtube-fill"></i><button>Like</button></div>
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-facebook-fill"></i><button>Like</button></div>
+                        <div class="platform"><span class="coin">$0.20</span><i class="ri-twitter-fill"></i><button>Like</button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slider-indicators">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- FUCTION TO SLIDE TASK  -->
+<script>
+    function goToSlide(index) {
+        const wrapper = document.getElementById('platformsWrapper');
+        const slideWidth = wrapper.querySelector('.platforms').offsetWidth;
+        wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+
+        // update active dot
+        const dots = document.querySelectorAll('.slider-indicators .dot');
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[index].classList.add('active');
+    }
+</script>

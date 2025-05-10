@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#121212">
+    <title>mine</title>
+    <link rel="icon" href="/images/favicon.jpeg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/setting.css">
+    <link rel="stylesheet" href="/css/mine.css">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <%- include ('partials/sidebar') %>
+
+
+            <!-- Main content -->
+            <main class="main-content">
+
+                <div class="mine-container">
+                    <!-- Profile Header -->
+                    <div class="mine-header">
+                        <div class="icons">
+                            <div class="icon" id="open-settings"><i class="ri-settings-4-line"></i></div>
+
+                            <!-- Slide-out settings panel -->
+                            <div class="settings-panel" id="settingsPanel">
+                                <div class="settings-content">
+                                    <span class="close-settings" id="close-settings"><i
+                                            class="ri-close-fill"></i></span>
+
+                                    <!-- Your settings HTML here -->
+                                    <div class="settings-header">Settings</div>
+
+                                    <div class="setting-item1">
+                                        <span class="setting-label">Alert</span>
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="setting-item1">
+                                        <span class="setting-label">Posh Notification</span>
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="setting-item1">
+                                        <span class="setting-label">Withdrawal currency</span>
+                                        <select class="currency-select">
+                                            <option value="USD" selected>USD</option>
+                                            <option value="EUR">EUR</option>
+                                            <option value="GBP">GBP</option>
+                                            <option value="KES">KES</option>
+                                            <option value="CAD">CAD</option>
+                                            <option value="NGN">NGN</option>
+                                            <option value="AUD">AUD</option>
+                                            <option value="GHS">GHS</option>
+                                            <option value="ZAR">ZAR</option>
+                                            <option value="INR">INR</option>
+                                            <option value="JPY">JPY</option>
+                                            <option value="CNY">CNY</option>
+                                            <option value="MXN">MXN</option>
+                                            <option value="SGD">SGD</option>
+                                            <option value="BRL">BRL</option>
+                                            <option value="RUB">RUB</option>
+                                            <option value="SAR">SAR</option>
+                                            <option value="AED">AED</option>
+                                            <option value="THB">THB</option>
+                                            <option value="TRY">TRY</option>
+                                            <option value="SEK">SEK</option>
+                                            <option value="NOK">NOK</option>
+                                            <option value="PLN">PLN</option>
+                                            <option value="DKK">DKK</option>
+                                        </select>
+                                    </div>
+
+
+                                    <!-- CHANING OF EMAILS, USERNAME AND PHONE NUM  -->
+                                    <span class="setting-label">Edit Your Profile Details</span>
+                                    <form id="profileForm">
+                                        <label>Name:</label>
+                                        <input type="text" name="name" placeholder="Enter new name" required />
+
+                                        <label>Email:</label>
+                                        <input type="email" name="email" placeholder="Enter new email" required />
+
+                                        <label>Phone Num:</label>
+                                        <input type="tel" name="phone" placeholder="Enter phone number" required />
+
+                                        <label>New Password (optional):</label>
+                                        <input type="password" name="newPassword"
+                                            placeholder="Enter new password (if changing)" />
+
+                                        <button type="submit">Save Changes</button>
+                                    </form>
+
+
+                                    <div class="setting-item1">
+                                        <span class="setting-label">About Us</span>
+                                        <span class="about-value">1.10.21(205)</span>
+                                    </div>
+
+                                    <div class="delete-account">Delete Account</div>
+                                    <button class="logout-btn" onclick="window.location.href='/'">Logout</button>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div class="profile-summary">
+                            <div class="profile-img-wrapper">
+                                <div class="profile-initials">
+                                    <% const nameParts=user.name.trim().split(' ');
+                                    const initials = nameParts[0][0] + (nameParts[1] ? nameParts[1][0] : '');
+                                     %>
+                                     <%= initials.toUpperCase() %>
+                                </div>
+                                <span class="active-dot"></span>
+                            </div>
+                            
+                        <div>
+                            <h2 class="name">
+                                <%= user.name %>
+                            </h2>
+                            <p class="email">
+                                <%= user.email %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                    <!-- Stats -->
+                    <div class="stats">
+                        <div class="stat">
+                            <p class="number">0</p>
+                            <p class="label">Total Referal</p>
+                        </div>
+                        <div class="stat">
+                            <p class="number">0</p>
+                            <p class="label">Task Completed</p>
+                        </div>
+                        <div class="stat">
+                            <p class="number">14.83k</p>
+                            <p class="label">Total Users</p>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Menu -->
+                    <div class="mine-menu">
+                        <a href="/investment">
+                            <div class="menu-item">
+                                <div class="left">
+                                    <img src="/images/piggy.jpeg" alt="My order" class="icon-img" />
+                                    <span>Investment</span>
+                                </div>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </a>
+
+                        <a href="/monetize?platform=tiktok">
+                            <div class="menu-item">
+                                <div class="left">
+                                    <img src="/images/social8.jpeg" alt="My order" class="icon-img" />
+                                    <span>Tiktok Monetization</span>
+                                </div>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </a>
+
+                        <a href="/monetize?platform=twitter">
+                            <div class="menu-item">
+                                <div class="left">
+                                    <img src="/images/social2.jpeg" alt="My order" class="icon-img" />
+                                    <span>Twitter Monetization</span>
+                                </div>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </a>
+
+                        <a href="/monetize?platform=youtube">
+                            <div class="menu-item">
+                                <div class="left">
+                                    <img src="/images/social4.jpeg" alt="My order" class="icon-img" />
+                                    <span>Youtube Monetization</span>
+                                </div>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </a>
+
+                        <a href="/monetize?platform=facebook">
+                            <div class="menu-item">
+                                <div class="left">
+                                    <img src="/images/social3.jpeg" alt="Collection" class="icon-img" />
+                                    <span>Facebook Monetization</span>
+                                </div>
+                                <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                            </div>
+                        </a>
+
+                        <a href="/monetize?platform=instagram">
+                        <div class="menu-item">
+                            <div class="left">
+                                <img src="/images/social9.jpeg" alt="Travel process" class="icon-img" />
+                                <span>Instagram Monetization</span>
+                            </div>
+                            <span class="arrow"><i class="ri-arrow-right-s-line"></i></span>
+                        </div>
+                    </a>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+<!-- /* ALL ABOUT WTHDRAWAL  */ -->
+  <div class="withdraw-container">
+    <h3>Submit Withdrawal</h3>
+    <p class="notice">
+      Please note: Earnings from <strong>Daily Quiz</strong>, <strong>Referral Program</strong>, and <strong>Social Tasks</strong> cannot be withdrawn unless you invest or monetize your account. Withdrawals take approximately <strong>40 minutes</strong> to process.
+    </p>
+
+    <form id="withdrawForm">
+  <label for="country">Country</label>
+  <input type="text" id="country" name="country" required placeholder="Enter your country" />
+
+  <label for="currency">Currency</label>
+  <input type="text" id="currency" name="currency" required placeholder="Enter your currency (e.g. USD)" />
+
+  <label for="bank">Bank Name</label>
+  <input type="text" id="bank" name="bank" required placeholder="Enter your bank name" />
+
+  <label for="accountNumber">Account Number</label>
+  <input type="text" id="accountNumber" name="accountNumber" required placeholder="Enter your account number" />
+
+  <label for="accountName">Account Name</label>
+  <input type="text" id="accountName" name="accountName" required placeholder="Enter your account name" />
+
+  <label for="package">Select Package</label>
+  <select id="package" name="package" required>
+    <option value="" disabled selected>Select one</option>
+    <option value="daily_quiz">Daily Quiz</option>
+    <option value="social_task">Social Task</option>
+    <option value="referral_program">Referral Program</option>
+    <option value="investment">Investment</option>
+    <option value="tiktok">TikTok Monetization</option>
+    <option value="facebook">Facebook Monetization</option>
+    <option value="twitter">Twitter Monetization</option>
+    <option value="youtube">YouTube Monetization</option>
+    <option value="instagram">Instagram Monetization</option>
+  </select>
+
+  <label for="amount">Withdrawal Amount</label>
+  <input type="number" id="amount" name="amount" required placeholder="Enter amount to withdraw" />
+
+  <button type="submit">Submit Withdrawal</button>
+</form>
+
+</div>
+</main>
+
+</div>
+
+
+
+
+
+<!-- FUNTION TO WITHDRAW  -->
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script>
+    document.getElementById("withdrawForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Simulate submission process (e.g., send to backend here if needed)
+
+        Toastify({
+            text: "Withdrawal submitted successfully",
+            duration: 4000,
+            gravity: "top",
+            position: "center",
+            backgroundColor: "#28a745"
+        }).showToast();
+
+        // Optionally clear the form
+        this.reset();
+    });
+</script>
+</body>
+</html>
+
+
+
+
+    <!-- FUNCTION TO OPEN SETTING AND CLOSE SETTING  -->
+<script>
+    const openSettings = document.getElementById("open-settings");
+    const closeSettings = document.getElementById("close-settings");
+    const settingsPanel = document.getElementById("settingsPanel")
+    openSettings.addEventListener("click", () => {
+        settingsPanel.classList.add("open");
+    })
+    closeSettings.addEventListener("click", () => {
+        settingsPanel.classList.remove("open");
+    })
+    // Optional: click outside to close
+    document.addEventListener("click", (e) => {
+        if (!settingsPanel.contains(e.target) && !openSettings.contains(e.target)) {
+            settingsPanel.classList.remove("open");
+        }
+    });
+</script>
+
+
+
+<!-- FUNCTION TO CHANGE USERNAME, EMAILS AND NUMBER  -->
+<script>
+    document.getElementById("profileForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+            newPassword: formData.get("newPassword") // Optional password field
+        };
+
+        try {
+            const response = await fetch("/auth/update-profile", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+
+            Toastify({
+                text: result.message || "Profile updated successfully",
+                duration: 4000,
+                gravity: "top",
+                position: "center",
+                backgroundColor: response.ok ? "#28a745" : "#dc3545"
+            }).showToast();
+
+            // Update form fields with new user data
+            document.querySelector("input[name=' name']").value = result.user.name;
+            document.querySelector("input[name='email' ]").value = result.user.email;
+            document.querySelector("input[name='phone' ]").value = result.user.phone;
+        } catch
+        (error) {
+            Toastify({
+                text: "Something went wrong!", duration: 4000,
+                gravity: "top", position: "center", backgroundColor: "#dc3545"
+            }).showToast();
+        }
+    }); </script>
+
+                                        <!-- FOR MY MANIFEST  -->
+                                        <script src="/js/scripts.js"></script>
+                                        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+                                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                        <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

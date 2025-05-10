@@ -1,0 +1,241 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary-color: #0d0d0d;
+    --primary-color-light: #111;
+    --primary-color-extra-light: #1a1a1a;
+    --secondary-color: #e5c765;
+    --secondary-color-dark: #c5a057;
+    --text-light: #cecece;
+    --white: #ffffff;
+    --max-width: 1300px;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding-bottom: 5rem;
+}
+
+.contain-hamburger{
+    display: none;
+}
+
+.dashboard {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .header h2 {
+    margin: 0;
+    font-size: 17px;
+  }
+  
+  .toggle {
+    display: flex;
+    margin: 15px 0;
+    background: #1f1f1f;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .toggle button {
+    flex: 1;
+    padding: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .toggle button.active {
+    background: var(--secondary-color-dark);
+    color: white;
+  }
+
+  .total h3 {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: #aaa;
+  }
+  
+  .total h1 {
+    margin-top: 3px;
+    font-size: 30px;
+  }
+  
+  .chart {
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .curve {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .days {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #888;
+  }
+  
+  .days .active {
+    color: var(--white);
+    font-weight: bold;
+  }
+
+
+
+
+  /* INVESTMENT PLANS */
+  .invest-plan{
+    padding-bottom: 5rem;
+  }
+
+  .piggy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .piggy img{
+    width: 100%;
+    filter: grayscale(100%);
+  }
+
+  .invest-plan h2 {
+    margin-top: 30px;
+    font-size: 18px;
+    color: var(--text-light);
+  }
+
+  .investment-card {
+    width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .investment-card h3 {
+    color: var(--text-light);
+    margin-bottom: 5px;
+    margin-top: 20px;
+    text-decoration: underline;
+    font-size: 16px;
+  }
+
+  .investment-card p {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  .investment-card p strong{
+    font-size: 12px;
+    color: var(--secondary-color-dark);
+  }
+
+.contain{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+  .investment-card input[type="number"] {
+    padding: 10px;
+    width: 40%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+
+  .investment-card button {
+    background: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: background 0.3s;
+    width: 60%;
+  }
+
+  .investment-card button:hover {
+    background: #218838;
+  }
+
+
+
+
+
+
+
+  /* pLAN SAMPEL */
+  .categories{
+    padding-bottom: 5rem;
+  }
+  
+  .categories h2 {
+    margin-top: 30px;
+    font-size: 18px;
+    color: var(--text-light);
+  }
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    background: #1f1f1f;
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 10px;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .item span {
+    display: block;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .item small {
+    font-size: 12px;
+    color: var(--secondary-color, #aaa);
+    font-weight: bold;
+    margin-top: 5px;
+  }
+
+  .item .percent {
+    font-size: 11px;
+    color: var(--text-light);
+  }
+
+  .item .percent strong {
+    color: var(--secondary-color-dark);
+  }
+
+  
+  .chat {
+    width: 100px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item .rate {
+    color: #00ff88;
+    font-weight: bold;
+    text-align: center;
+  }
+  

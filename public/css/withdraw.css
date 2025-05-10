@@ -1,0 +1,238 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --primary-color: #0d0d0d;
+    --primary-color-light: #111;
+    --primary-color-extra-light: #1a1a1a;
+    --secondary-color: #e5c765;
+    --secondary-color-dark: #c5a057;
+    --text-light: #cecece;
+    --white: #ffffff;
+    --max-width: 1300px;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.contain-hamburger{
+    display: none;
+}
+
+.app-container {
+    width: 100%;
+    margin: auto;
+    padding: 1rem 0;
+    padding-bottom: 6rem;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .profile-img-wrapper {
+    position: relative;
+    width: 50px;
+    height: 50px;
+  }
+
+  .profile-initials {
+    width: 80%;
+    height: 80%;
+    background-color: var(--secondary-color-dark);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+  
+  .user-name {
+    font-weight: bold;
+  }
+  
+  .menu-icon {
+    font-size: 1.5rem;
+  }
+
+  header i{
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  
+  .balance-section {
+    text-align: center;
+  }
+  
+  .balance-label {
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+  
+  .balance-amount {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .highlight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-color-extra-light);
+    border-radius: 30px;
+    font-size: 0.7rem;
+    color: #00ff88;
+    padding: 3px 7px;
+    font-weight: bold;
+    animation: pulseZoom 1.5s ease-in-out infinite;
+    border-radius: 30px;
+  }
+  @keyframes pulseZoom {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+  
+  
+    .chart {
+      margin: 1rem 0;
+    }
+
+
+  .days {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.8rem;
+    color: #888;
+  }
+  
+  .days .active {
+    color: var(--white);
+  }
+  
+
+
+  .transactions {
+    margin-top: 2rem;
+  }
+  
+  .transactions h2 {
+    color: var(--text-light);
+    margin-bottom: 5px;
+  }
+
+  .info {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    font-size: 13px; 
+  }
+  
+  .transaction {
+    background: var(--primary-color-extra-light);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.80rem;
+    cursor: pointer6;
+  }
+  
+.icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 1rem;
+  display: flex;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Animated background directly on .icon */
+.icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #070f18, #133857, #0d1d2e, #1f3786, #151a2b);
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: border-move 5s infinite ease-in-out;
+}
+@keyframes border-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+  
+
+  .details {
+    flex: 1;
+  }
+  
+  .details p {
+    font-weight: 500;
+  }
+  
+  .details small {
+    font-size: 12px;
+    color: var(--secondary-color);
+    font-weight: bold;
+  }
+  
+  .amount {
+    color: #32ba7b;
+    font-weight: bold;
+  }
+  
+
+   .piggy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .piggy img{
+    width: 100%;
+    filter: grayscale(100%);
+  }

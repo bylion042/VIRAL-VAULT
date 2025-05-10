@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0d0d">
+    <title>monetize</title>
+    <link rel="icon" href="/images/favicon.jpeg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/monetize.css">
+</head>
+
+<body>
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+
+    <div class="container">
+        <!-- Main content -->
+        <main class="main-content">
+
+            <div class="monetize">
+                <!-- BACK ARROR  -->
+                <a href="/dashboard" class="back">
+                    <div><i class="ri-arrow-left-line"></i></div>
+                </a>
+
+                <!-- DYNAMIC PASS  -->
+                <div id="monetizeContent"></div>
+
+                <!-- PURCHASE BUTTON  -->
+                <div class="btn-contain">
+                    <button class="purchase" onclick="startPayment()">Start for $50</button>
+                    <button class="disconnect">Disconnect</button>
+                </div>
+
+        
+                <!-- ABOUT FOLLOWERS  -->
+                <h1 class="follow-plan">Amazing Offer</h1>
+                <div class="followers">
+                    <div class="container">
+                        <div class="step y-rotate">
+                            <div class="circle">950,000K</div>
+                            <h2>FOLLOWERS</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ALL ABOUT TABLE SLIDE  -->
+                <h1 class="social-plan">Criterials</h1>
+                <div class="table-scroll-wrapper">
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Social Medias</th>
+                                    <th>Like Service</th>
+                                    <th>Views Service</th>
+                                    <th>Comments Service</th>
+                                    <th>You get Paid</th>
+                                    <th>Payouts</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="td">Tiktok</td>
+                                    <td>22 likes</td>
+                                    <td>410 Views</td>
+                                    <td>11 Comments</td>
+                                    <td>$9 per post</td>
+                                    <td>Weekly</td>
+                                </tr>
+                                <tr>
+                                    <td class="td">Twitter</td>
+                                    <td>18 likes</td>
+                                    <td>300 Views</td>
+                                    <td>10 Comments</td>
+                                    <td>$5 per post</td>
+                                    <td>Weekly</td>
+                                </tr>
+                                <tr>
+                                    <td class="td">Youtube</td>
+                                    <td>15 likes</td>
+                                    <td>100 Views/td>
+                                    <td>5 Comments</td>
+                                    <td>$12 per post</td>
+                                    <td>Weekly</td>
+                                </tr>
+                                <tr>
+                                    <td class="td">Facebook</td>
+                                    <td>30 likes</td>
+                                    <td>350 Views</td>
+                                    <td>15 Comments</td>
+                                    <td>$7 per post</td>
+                                    <td>Weekly</td>
+                                </tr>
+                                <tr>
+                                    <td class="td">Instagram</td>
+                                    <td>20 likes</td>
+                                    <td>200 Views</td>
+                                    <td>8 Comments</td>
+                                    <td>$4 per post</td>
+                                    <td>Weekly</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <!-- BACKGROUND BLUR -->
+    <span class="footer__blur"></span>
+
+
+
+<script>
+  const userEmail = "<%= email %>";
+</script>
+    <!-- FUNCTION TO PAY $50 TO FLUTTER WAVE  -->
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+<script>
+function startPayment() {
+  FlutterwaveCheckout({
+    public_key: "FLWPUBK-afdb2b4c8418a52f312bf7de3eeef9e5-X", // Your actual Flutterwave public key
+    tx_ref: "tx_" + Date.now(),
+    amount: 50,
+    currency: "USD",
+    payment_options: "card, banktransfer, ussd, account, mobilemoneyghana, mobilemoneyuganda, mobilemoneyrwanda, mobilemoneyzambia, mobilemoneyfranco, mpesa, credit",
+    customer: {
+    email: userEmail,  // Dynamically use logged-in user's email
+    },
+    callback: function (data) {
+      console.log("Payment callback:", data);
+      // Redirect to confirmation page
+      window.location.href = "/monetize?payment=success";
+    },
+    onclose: function () {
+      console.log("Payment closed");
+    },
+    customizations: {
+      title: "Viral Vault",
+      description: "Social media Monetization",
+      logo: "https://i.postimg.cc/W1XcxPmD/favicon.jpg", // Optional logo URL
+    },
+  });
+}
+</script>
+
+<!-- TOASTIFY FOR SUCEESS PAYMENT  -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script>
+  // Check if payment was successful via query param
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('payment') === 'success') {
+    Toastify({
+      text: "Payment successful! Welcome to premium features.",
+      duration: 5000,
+      gravity: "top",
+      position: "right",
+      backgroundColor: "#4BB543",
+    }).showToast();
+  }
+</script>
+
+
+
+
+
+
+
+    <!-- FUNTION TO SHOW PLATFORMS FROM DASHBOARD -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const platform = urlParams.get("platform");
+
+            if (platform) {
+                const platforms = {
+                    tiktok: {
+                        name: "Tiktok",
+                        img: "/images/media5.png"
+                    },
+                    instagram: {
+                        name: "Instagram",
+                        img: "/images/media3.png"
+                    },
+                    facebook: {
+                        name: "Facebook",
+                        img: "/images/media1.png"
+                    },
+                    youtube: {
+                        name: "Youtube",
+                        img: "/images/media4.png"
+                    },
+                    twitter: {
+                        name: "Twitter",
+                        img: "/images/media2.png"
+                    }
+                };
+
+                const selected = platforms[platform.toLowerCase()];
+                const container = document.getElementById("monetizeContent");
+
+                if (selected && container) {
+                    container.innerHTML = `
+            <h3>Social Media: ${selected.name}</h3>
+            <img src="${selected.img}" alt="${selected.name}" style="width:100%; display:block;">
+            <button class="connect-button">
+              <span class="button-text">Connect ${selected.name}</span>
+            </button>
+          `;
+
+                    const button = container.querySelector(".connect-button");
+
+                    button.addEventListener("click", () => {
+                        // Add loading state
+                        button.classList.add("loading");
+                        button.disabled = true;
+
+                        // Simulate a 5-second loading process
+                        setTimeout(() => {
+                            // Remove loading state and update button
+                            button.classList.remove("loading");
+                            button.classList.add("not-paid");
+                            button.disabled = false;
+                            button.innerHTML = `<span class="button-text">Not Paid for ${selected.name}</span>`;
+
+                            // Show toast notification
+                            Toastify({
+                                text: `${selected.name} monetization failed`,
+                                duration: 3000,
+                                gravity: "top",
+                                position: "center",
+                                backgroundColor: "#e74c3c"
+                            }).showToast();
+                        }, 5000);
+                    });
+                } else {
+                    console.error("Selected platform not found in the list.");
+                }
+            } else {
+                console.error("Platform parameter not found in URL.");
+            }
+        });
+    </script>
+  
+  <style>
+    .swal-title-small {
+        font-size: 1rem !important;
+        color: black;
+    }
+    .swal-text-bold {
+        color: black;
+        font-size: 16px;
+    }
+  </style>
+  
+
+
+
+
+    <!-- DISCONNECT BUTTON FUNTION  -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const disconnectBtn = document.querySelector(".disconnect");
+
+            if (disconnectBtn) {
+                disconnectBtn.addEventListener("click", function () {
+                    Toastify({
+                        text: "Account not linked yet",
+                        duration: 3000,
+                        gravity: "top",
+                        position: "center",
+                        backgroundColor: "#e74c3c",
+                        stopOnFocus: true,
+                    }).showToast();
+                });
+            }
+        });
+    </script>
+
+
+    <!-- FOR MY MANIFEST  -->
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #101010;
+    --primary-color-light: #1c1c1c;
+    --primary-color-extra-light: #292929;
+    --secondary-color: #e5c765;
+    --secondary-color-dark: #c5a057;
+    --text-light: #cecece;
+    --white: #ffffff;
+    --max-width: 1300px;
+  }
+  
+
+
+.offers {
+    width: 40%;
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+
+.features {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.features a {
+    text-decoration: none;
+}
+
+.feature {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature img {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.soon{
+    position: absolute;
+    top: -15px;
+    right: 11px;
+    background-color: #ff5c5c;
+    color: var(--white);
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 20px;
+    animation: zoomIn 1.5s ease-in-out infinite;
+    box-shadow: 0 0 6px rgba(255, 92, 92, 0.7);
+    white-space: nowrap;
+  }
+  /* Pulsing animation */
+  @keyframes zoomIn {
+    0%, 100% {
+      transform: translateY(50%) scale(1);
+    }
+    50% {
+      transform: translateY(50%) scale(1.15);
+    }
+  }
+
+  .access-popup {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateX(30px);
+    pointer-events: none;
+    transition: all 0.5s ease;
+    z-index: 9999;
+    width: 90%;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    backdrop-filter: blur(5px);
+    color: var(--white);
+    border: 2px solid var(--text-light);
+    background: var(--secondary-color-dark);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.access-popup.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.feature:hover img {
+    transform: scale(1.1);
+    border-color: var(--primary-color);
+}
+
+.feature span {
+    display: block;
+    margin-top: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--white);
+    transition: color 0.3s ease;
+}
+
+.feature:hover span {
+    color: var(--text-light);
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.feature:hover img {
+    animation: bounce 0.4s ease-in-out;
+}
+
+
+.banner {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    gap: 10px;
+}
+
+.banner-text {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.banner-slideshow {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-slideshow img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 0;
+}
+
+
+.banner-slideshow img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 800px) {
+    .offers {
+        width: 100%;
+        gap: 2 0px;
+    }
+
+
+    .header {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+
+    .label {
+        font-size: 11px;
+        /* color: #f0a500; */
+    }
+
+    .label i {
+        font-size: 12px;
+    }
+
+
+    .features {
+        gap: 15px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .feature img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature span {
+        font-size: 11px;
+    }
+
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .banner-text {
+        font-size: 14px;
+    }
+
+    .banner-slideshow {
+        height: 150px;
+    }
+
+    .banner img {
+        width: 100%;
+    }
+
+}

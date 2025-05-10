@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --primary-color: #0d0d0d;
+    --primary-color-light: #111;
+    --primary-color-extra-light: #1a1a1a;
+    --secondary-color: #e5c765;
+    --secondary-color-dark: #c5a057;
+    --text-light: #cecece;
+    --white: #ffffff;
+    --max-width: 1300px;
+  }
+
+.draggable-image{
+    display: none;
+}
+
+
+
+
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--primary-color);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: right 0.4s ease-in-out;
+    z-index: 2000;
+    overflow-y: auto;
+  }
+  
+  .settings-panel.open {
+    right: 0;
+  }
+  
+  .settings-content {
+    padding: 3rem 1rem;
+  }
+
+  .icons i {
+    font-size: 23px;
+  }
+  
+  .close-settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--white);
+    transition: background 0.3s, transform 0.3s ease;
+  }
+  
+  .close-settings:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+  }
+
+.setting-content {
+    padding: 20px 10px;
+}
+
+.setting-content a {
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 1rem;
+    margin-top: 5rem;
+    font-size: 15px;
+    background: var(--background-gradient);
+    color: var(--white);
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(186, 190, 253, 0.4);
+    animation: bounceActive 0.3s ease;
+}
+
+.settings-container {
+    width: 100%;
+    margin: auto;
+}
+
+.settings-header {
+    text-align: center;
+    font-size: 1.20rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+/* CHANING OF EMAILS, USERNAME AND PHONE NUM */
+  #profileForm {
+        width: 100%;
+        margin: 10px auto;
+        padding: 20px 10px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-family: 'Segoe UI', sans-serif;
+       color: var(--text-light);
+    }
+
+    #profileForm label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: var(--primary-color-light);
+        text-align: start;
+    }
+
+    #profileForm input[type="text"],
+    #profileForm input[type="email"],
+    #profileForm input[type="tel"],
+    #profileForm input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        transition: border 0.3s;
+    }
+
+    #profileForm input:focus {
+        border-color: var(--secondary-color-dark);
+        outline: none;
+    }
+
+    #profileForm button {
+        width: 100%;
+        padding: 12px;
+        background: var(--secondary-color-dark);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    #profileForm button:hover {
+        background: var(--secondary-color);
+    }
+
+
+
+
+.setting-item1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    font-size: 1rem;
+}
+
+.setting-label {
+    font-weight: 500;
+    color: var(--text-light);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--secondary-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(18px);
+}
+
+.currency-select {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: var(--white);
+    border-radius: 3px;
+    background: var(--secondary-color-dark);
+    cursor: pointer;
+}
+
+.about-value {
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+.delete-account {
+    color: #ff5c5c;
+    text-align: left;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+
+.logout-btn {
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+    background: #ff5c5c;
+    color: var(--white);
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: #b73535;
+}

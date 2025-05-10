@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --primary-color: #0d0d0d;
+    --primary-color-light: #111;
+    --primary-color-extra-light: #1a1a1a;
+    --secondary-color: #e5c765;
+    --secondary-color-dark: #c5a057;
+    --text-light: #cecece;
+    --white: #ffffff;
+    --max-width: 1300px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-image: none;
+    overflow-y: auto;
+    font-family: 'Luckiest Guy', cursive;
+    width: 100%;
+}
+
+
+.container {
+    background: var(--primary-color-light);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 500px;
+    animation: fadeIn 0.8s ease-in-out;
+    color: var(--white);
+}
+
+.container img {
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: var(--secondary-color-dark);
+    }
+
+    p {
+      font-size: 1.5em;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .install {
+    font-family: 'Luckiest Guy', cursive;
+      display: inline-block;
+      margin-top: 30px;
+      padding: 20px 100px;
+      font-size: 4rcap;
+      font-weight: bolder;
+      color: white;
+      text-shadow: 5px 7px var(--primary-color);
+      background-color: var(--secondary-color-dark);
+      box-shadow: 10px 10px var(--primary-color-light);
+      border: none;
+      border-radius: 20px;
+      width: 100%;
+      text-decoration: none;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+      transition: background-color 0.3s;
+    }
+  
+    .install:hover {
+      background-color: var(--secondary-color);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+
+
+
+    /* BLUR EFFECT */
+.bg__blur {
+    position: absolute;
+    box-shadow: 0 0 1000px 50px var(--secondary-color);
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: fixed;
+  }
+  
+  .footer__blur {
+    position: fixed;
+    position: absolute;
+    z-index: -1;
+    box-shadow: 0 0 1000px 50px var(--secondary-color);
+    bottom: 0;
+    right: 0;
+  }

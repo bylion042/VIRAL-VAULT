@@ -1,0 +1,200 @@
+<!-- NAV FOR SMALL SCREEN  -->
+<div class="small-screen-nav">
+    <div class="link-container">
+        <a href="/dashboard" class="nav-link">
+            <i class="ri-dashboard-line"></i>
+            <p>DASHBOARD</p>
+        </a>
+
+        <a href="/withdraw" class="nav-link">
+            <i class="ri-wallet-line"></i>
+            <p>WITHDRAW</p>
+        </a>
+
+        <a href="/investment" class="nav-link">
+            <i class="ri-stock-line"></i>
+            <p>INVESTMENT</p>
+        </a>
+
+        <a href="/mine" class="nav-link">
+            <i class="ri-user-line"></i>
+            <p>MINE VAULT</p>
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- SIDE BAR FOR SMALL SCREEN  -->
+<div class="contain-hamburger" id="hamburger-container">
+    <div class="me">
+        <div class="profile-summary">
+            <div class="profile-img-wrapper">
+                <div class="profile-initials">
+                    <% const nameParts=user.name.trim().split(' ');
+                    const initials = nameParts[0][0] + (nameParts[1] ? nameParts[1][0] : '');
+                  %>
+                  <%= initials.toUpperCase() %>
+                </div>
+              </div>
+        </div>
+
+       <!-- NOTIFICATION BELL -->
+<div class="hamburger" id="open-notification">
+    <i class="ri-notification-2-line"></i>
+    <span class="notification-badge">5</span>
+  </div>
+  
+        <!-- Slide-out settings panel -->
+        <div class="notification-panel" id="notificationPanel">
+            <div class="notification-content">
+                <span class="close-notification" id="close-notification"><i class="ri-close-fill"></i></span>
+                
+                <!-- Your notification HTML here -->
+            <div class="notification-header">Notifications</div>
+                <div class="notifications">
+
+                    <div id="messageBox" class="message-box hidden"></div>
+
+                    <div class="notification" data-message="Welcome to our website! <%= user.name %> Trust me, you're not here by mistake — you're right where you need to be. Let’s explore something amazing together.">
+                        <div class="avatar-container">
+                          <img src="/images/notification-user.jpeg" class="avatar" />
+                        </div>
+                      <div class="text">
+                        <p>Welcome to our website! <%= user.name %> Trust me...</p>
+                      </div>
+                    </div>
+                
+                    <div class="notification" data-message="You've taken the first step toward a smarter financial future. At [Your Brand], we believe that everyone deserves the opportunity to grow their wealth with confidence and clarity. Whether you're just starting out or expanding your portfolio, we're here to guide you every step of the way. Explore flexible investment plans, real-time insights, and dedicated support. Your future is bright — and it starts right now.">
+                        <div class="avatar-container">
+                          <img src="/images/notification-user.jpeg" class="avatar" />
+                        </div>
+                      <div class="text">
+                        <p>You've taken the first step toward a smarter financial...</p>
+                      </div>
+                    </div>
+                
+                    <div class="notification" data-message="Ready to start monetizing? You're in the right place. Whether you're a creator, entrepreneur, or everyday user with value to share, our platform gives you the tools to turn your time, skills, and audience into real income. From affiliate marketing to selling digital assets, subscriptions, and more — it's time to unlock the revenue streams you deserve. Let's build something profitable together.">
+                        <div class="avatar-container">
+                          <img src="/images/notification-user.jpeg" class="avatar" />
+                        </div>
+                      <div class="text">
+                        <p>TReady to start monetizing? You're in the right place...</p>
+                      </div>
+                      </div>
+
+                    <div class="notification" data-message="Spread the word. Earn rewards. Our referral program is your chance to help others while helping yourself! Invite friends, family, or colleagues to join our platform, and for every successful referral, you earn real benefits — cash bonuses, discounts, or exclusive perks. It’s simple: the more you share, the more you earn. Start referring today and turn your network into income!">
+                        <div class="avatar-container">
+                          <img src="/images/notification-user.jpeg" class="avatar" />
+                        </div>
+                      <div class="text">
+                        <p>Spread the word. Earn rewards. Our referral program...</p>
+                      </div>
+                    </div>
+
+                    <div class="notification" data-message="Test your brain. Win big daily! Our Daily Quiz Game is live — and it’s your chance to have fun, learn something new, and walk away with exciting rewards. Every day brings fresh questions, leaderboard challenges, and the thrill of quick thinking. Whether you're in it for fun or for the prizes, don’t miss your shot at the top spot. Ready to play? Let’s go!">
+                        <div class="avatar-container">
+                          <img src="/images/notification-user.jpeg" class="avatar" />
+                        </div>
+                      <div class="text">
+                        <p>Test your brain. Win big daily! Our Daily Quiz Game...</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- notification function  -->
+<script>
+    document.querySelectorAll(' .notification').forEach(notification => {
+        notification.addEventListener('click', () => {
+            const messageBox = document.getElementById('messageBox');
+            messageBox.textContent = notification.getAttribute('data-message');
+            messageBox.classList.add('show');
+        });
+    });
+
+</script>
+
+
+
+
+
+
+                        <!-- SIDE BAR FOR LARGE SCREEN  -->
+                        <div class="sidebar" id="sidebar">
+                            <div class="logo">
+                                <img src="/images/logo.png" alt="logo" width="80%">
+                            </div>
+                            <div class="menu">
+                                <a href="/dashboard" class="on active">
+                                    <i class="ri-home-4-line"></i>
+                                    <span>Home</span>
+                                </a>
+                                <a href="/mine" class="on toasts">
+                                    <i class="ri-user-line"></i>
+                                    <span>Mine</span>
+                                </a>
+                                <a href="/account" class="on toasts">
+                                    <i class="ri-wallet-line"></i>
+                                    <span>Account</span>
+                                </a>
+                                <a href="/investment" class="on toasts">
+                                    <i class="ri-stock-line"></i>
+                                    <span>Investment</span>
+                                </a>
+                                <a href="/withdraw" class="on buyAccount">
+                                    <i class="ri-wallet-line"></i>
+                                    <span>Withdraw</span>
+                                </a>
+                                <a href="/" class="on">
+                                    <i class="ri-logout-box-line"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+
+                            <data>
+                                <div class="sars">
+                                    <a href="/select-card"><button><i class="ri-amazon-fill"></i> Sell Gift
+                                            Card</button></a>
+                                </div>
+                            </data>
+                        </div>
+
+                        <!-- Arrow to toggle sidebar -->
+                        <div class="toggle-sidebar" id="toggle-btn">
+                            <i class="ri-menu-3-line"></i>
+                        </div>
+
+
+
+
+
+
+
+
+                        <!-- FUNCTION TO OPEN NOTIFICATION BAR  -->
+                        <script>
+                            const openNotification = document.getElementById("open-notification");
+                            const closeNotification = document.getElementById("close-notification");
+                            const notificationPanel = document.getElementById("notificationPanel");
+
+                            openNotification.addEventListener("click", () => {
+                                notificationPanel.classList.add("open");
+                            });
+
+                            closeNotification.addEventListener("click", () => {
+                                notificationPanel.classList.remove("open");
+                            });
+
+                            // Optional: click outside to close
+                            document.addEventListener("click", (e) => {
+                                if (!notificationPanel.contains(e.target) && !openNotification.contains(e.target)) {
+                                    notificationPanel.classList.remove("open");
+                                }
+                            });
+                        </script>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#121212"> 
+    <title>withdraw</title>
+    <link rel="icon" href="/images/favicon.jpeg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/withdraw.css">
+</head>
+
+<body>
+    <div class="container">
+        <%- include ('partials/sidebar') %>
+
+
+            <!-- Main content -->
+            <main class="main-content">
+                <div class="app-container">
+                    <header>
+                        <div class="profile-img-wrapper">
+                            <div class="profile-initials">
+                                <% const nameParts=user.name.trim().split(' ');
+                                const initials = nameParts[0][0] + (nameParts[1] ? nameParts[1][0] : '');
+                              %>
+                              <%= initials.toUpperCase() %>
+                            </div>
+                          </div>
+                        <span class="user-name"><%= user.name %></span>
+                        <i class="ri-trademark-fill"></i>
+                    </header>
+
+                    <section class="balance-section">
+                        <p class="balance-label">Total Balance</p>
+                        <h1 class="balance-amount">$0.00</h1>
+                        <div class="wrapper">
+                            <div class="highlight">
+                              <div>+250</div>
+                            </div>
+                          </div> 
+                        <div class="chart">
+                            <canvas id="chart" height="100"></canvas>
+                        </div>
+                        <div class="days" id="days">
+                            <span>Sun</span>
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                        </div>                        
+                    </section>
+
+
+
+                    <section class="transactions">
+                        <h2>WITHDRAW</h2>
+                           <p class="info">
+                            To withdraw your earnings, simply choose one of the available withdrawal packages below💸.
+                           </p>
+                        <div class="transaction">
+                            <div class="icon"><i class="ri-tiktok-fill"></i></div>
+                            <div class="details">
+                                <p>Tiktok</p>
+                                <small>Withdrawable Balance</small>
+                            </div>
+                            <div class="amount">$0.00</div>
+                        </div>
+
+                        <div class="transaction">
+                            <div class="icon"><i class="ri-twitter-fill"></i></div>
+                            <div class="details">
+                                <p>Twitter</p>
+                                <small>Withdrawable Balance</small>
+                            </div>
+                            <div class="amount">$0.00</div>
+                        </div>
+
+                        <div class="transaction">
+                            <div class="icon"><i class="ri-facebook-fill"></i></div>
+                            <div class="details">
+                                <p>Facebook</p>
+                                <small>Withdrawable Balance</small>
+                            </div>
+                            <div class="amount">$0.00</div>
+                        </div>
+
+                        <div class="transaction">
+                            <div class="icon"><i class="ri-instagram-line"></i></div>
+                            <div class="details">
+                                <p>Instagram</p>
+                                <small>Withdrawable Balance</small>
+                            </div>
+                            <div class="amount">$0.00</div>
+                        </div>
+
+                        <div class="transaction">
+                            <div class="icon"><i class="ri-youtube-line"></i></div>
+                            <div class="details">
+                                <p>Youtube</p>
+                                <small>Withdrawable Balance</small>
+                            </div>
+                            <div class="amount">$0.00</div>
+                        </div>
+
+                       <div class="transaction">
+                           <div class="icon"><i class="ri-bank-line"></i></div>
+                           <div class="details">
+                              <p>Investment</p>
+                              <small>Withdrawable Balance</small>
+                           </div>
+                          <div class="amount">$<%= balance.toFixed(2) %></div> <!-- Display the balance -->
+                      </div>
+
+
+                        <div class="transaction">
+                            <div class="icon"><i class="ri-gift-line"></i></div>
+                            <div class="details">
+                                <p>Social Task</p>
+                                <small>Withdrawable Balance</small>
+                            </div>
+                            <div class="amount">$0.00</div>
+                        </div>
+
+                        <div class="transaction">
+                            <div class="icon"><i class="ri-time-line"></i></div>
+                            <div class="details">
+                                <p>Daily Quiz</p>
+                                <small>Withdrawable Balance</small>
+                            </div>
+                            <div class="amount" id="amount">$0.00</div>
+                        </div>
+                        
+                        <div class="transaction">
+                            <div class="icon"><i class="ri-group-line"></i></div>
+                            <div class="details">
+                                <p>Referals</p>
+                                <small>Withdrawable Balance</small>
+                            </div>
+                            <div class="amount">-$0.00</div>
+                        </div>
+                    </section>
+
+                    <div class="piggy">
+                        <img src="/images/investor.png" alt="investor">
+                    </div>
+
+                </div>
+
+            </main>
+    </div>
+
+<!-- FUNTION TO SHOW QUIZE BALANCE  -->
+<script>
+  const user = { name: "<%= user.name %>" };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const username = user.name || "guest";
+    const savedBalance = localStorage.getItem(`${username}_balance`);
+
+    if (savedBalance) {
+      const amountElement = document.getElementById("amount");
+      if (amountElement) {
+        amountElement.textContent = `$${parseFloat(savedBalance).toFixed(2)}`;
+      }
+    }
+  });
+</script>
+
+
+
+<!-- FUNTION TOO ADD ALL THE BALANCE AND SHOW THEM  -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    let total = 0;
+
+    // Select all elements with class 'amount'
+    document.querySelectorAll(".amount").forEach(el => {
+      const value = parseFloat(el.textContent.replace(/[^0-9.]/g, '')) || 0;
+      total += value;
+    });
+
+    // Update the .balance-amount with the total
+    const balanceDisplay = document.querySelector(".balance-amount");
+    if (balanceDisplay) {
+      balanceDisplay.textContent = `$${total.toFixed(2)}`;
+    }
+  });
+</script>
+
+
+
+
+
+
+<!-- FUNCTION TO ADD ACTIVE TO DAYS CORRECTLY  -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const daysContainer = document.getElementById("days");
+      const daySpans = daysContainer.getElementsByTagName("span");
+      const today = new Date().getDay(); // 0 (Sun) to 6 (Sat)
+  
+      // Remove any existing 'active' class
+      for (let i = 0; i < daySpans.length; i++) {
+        daySpans[i].classList.remove("active");
+      }
+
+      // Add 'active' to the current day
+      daySpans[today].classList.add("active");
+    });
+  </script>
+  
+
+
+  <!-- FUNCTION TO WITHDRW SHOW TOSTIFY  -->
+  <script>
+    // Select all elements with class 'transaction'
+    const transactions = document.querySelectorAll('.transaction');
+
+    // Add event listener to each transaction item
+    transactions.forEach(transaction => {
+        transaction.addEventListener('click', () => {
+            // Show Toastify notification on click
+            Toastify({
+                text: "Submite Withdrawal on Mine Vault",
+                duration: 5000, // Display duration in milliseconds
+                backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)", // Customize background color
+                close: true, // Display close button
+                gravity: "top", // Position of the toast
+                position: "right", // Position of the toast
+            }).showToast();
+        });
+    });
+</script>
+
+
+
+
+
+<!-- FUCTION FOR THE CHART  -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById("chart").getContext("2d");
+      
+        new Chart(ctx, {
+          type: "line",
+          data: {
+            labels: ["Sat", "Sun", "Mon", "Tue", "Wed"],
+            datasets: [
+              {
+                label: "This Week", // Green wavy up toward center
+                data: [400, 900, 300, 700, 1000],
+                borderColor: "#00ff88",
+                backgroundColor: "transparent",
+                tension: 0.5,
+                fill: false,
+                pointRadius: 4,
+                pointBackgroundColor: "#00ff88"
+              },
+              {
+                label: "Last Week", // Red wavy down toward center
+                data: [500, 700, 300, 900, 950],
+                borderColor: "#c5a057",
+                backgroundColor: "transparent",
+                tension: 0.5,
+                fill: false,
+                pointRadius: 4,
+                pointBackgroundColor: "#c5a057"
+              }
+            ]
+          },
+          options: {
+            responsive: true,
+            scales: {
+              x: { display: false },
+              y: { display: false }
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                enabled: true,
+                backgroundColor: "#222",
+                titleColor: "#fff",
+                bodyColor: "#fff",
+                borderColor: "#666",
+                borderWidth: 1
+              }
+            }
+          }
+        });
+      </script>
+      
+    <!-- FOR MY MANIFEST  -->
+    <script src="/js/scripts.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101010">
+    <link rel="icon" href="/images/favicon.jpeg" type="image/png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css" />
+    <link rel="manifest" href="/manifest.json">
+    <title>viral vault</title>
+</head>
+
+<body>
+
+
+    <!-- ALL ABOUT NAV AND HAMBURGER  -->
+
+    <!-- FOR BIG SCREEN  -->
+    <nav class="hide">
+        <div class="nav__logo">
+            <a href="/"><img src="images/logo.png" alt="logo" /></a>
+        </div>
+
+        <div class="nav-hold">
+            <ul class="nav__links">
+                <li class="link"><a href="#about">F & Q</a></li>
+                <li class="link"><a href="#payments">Payments</a></li>
+                <li class="link"><a href="#reason-section">Why join us</a></li>
+                <li class="link"><a href="#Testimonials">Testimonials</a></li>
+            </ul>
+
+            <a href="/login"><button class="btn join__now">Login</button></a>
+            <a href="/register"><button class="btn join__now">Register</button></a>
+            <button class="installBtn btn join__now install" style="display: none;">Install App</button>
+        </div>
+    </nav>
+
+
+
+
+    <!-- FOR SMALL SCREEN  -->
+    <nav class="mobile-nav hide1">
+        <div class="nav__logo">
+            <a href="/"><img src="images/logo.png" alt="logo"></a>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <div class="hamburger" id="menu-toggle" aria-label="Open menu">
+            <i class="ri-menu-3-line"></i>
+        </div>
+
+        <!-- Sliding Menu -->
+        <div class="hold3" id="mobile-menu">
+            <div class="hamburger" id="menu-close" aria-label="Close menu">
+                <i class="ri-close-line"></i>
+            </div>
+
+            <ul class="nav__links">
+                <li class="link"><a href="#about">F & Q</a></li>
+                <li class="link"><a href="#payments">Payments</a></li>
+                <li class="link"><a href="#reason-section">Why join us</a></li>
+                <li class="link"><a href="#Testimonials">Testimonials</a></li>
+            </ul>
+
+            <div class="btn-hold">
+                <a href="/login"><button class="btn join__now">Login</button></a>
+                <a href="/register"><button class="btn join__now">Register</button></a>
+                <button class="installBtn btn join__now small-screen" style="display: none;">Install Our App</button>
+                <a href="/forgot-password"><button class="btn join__now">Forgot your password?</button></a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- ALL MAIN ABOUT HEADER  -->
+    <header class="section__container header__container">
+        <div class="header__content">
+            <span class="bg__blur"></span>
+
+            <h4>Monetize your social media & Grow your wealth.</h4>
+            <h1><span>Viral vault </span> Monetize all your social accounts & <span>Investment</span></h1>
+            <p>
+                Viral Vault is your all-in-one hub for turning your social media presence into a source of real income —
+                while also giving you smart tools to invest and grow your earnings.
+            </p>
+            <p class="download">Download Now on:</p>
+
+            <div class="download-img">
+                <img src="./images/app store.jpg" alt="app store">
+                <img src="./images/play store.jpg" alt="play store">
+                <img src="./images/web app.jpg" alt="web app" class="web-app">
+            </div>
+
+            <ul class="features">
+                <li>&#10003; Instant Payment</li>
+                <li>&#10003; Best Market Rates</li>
+                <li>&#10003; Secure Transactions</li>
+                <li>&#10003; 24/7 Support</li>
+            </ul> <br>
+        </div>
+
+        <div class="header__image">
+            <img src="./images/app.png">
+        </div>
+    </header>
+
+
+
+
+    <!-- ALL ABOUT HOW IT WORKS  -->
+    <section class="review section__container">
+        <h2 class="section__header">How it Works ?</h2>
+        <p class="section__subheader">
+            Viral Vault is built to empower creators and everyday users to monetize their social media accounts while
+            growing their wealth through simple, smart investments. We believe everyone should have the tools to earn
+            from their online presence — no matter their follower count.
+        </p>
+        <br>
+
+        <div class="how-it-work">
+            <div class="container">
+                <div class="step">
+                    <div class="circle orange">1</div>
+                    <h2>CHOOSE YOUR SERVICE</h2>
+                    <p class="section__subheader">Select the social media account you want to monetize or explore
+                        investment options.</p>
+                </div>
+
+                <div class="arrow-left"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="arrow-down"><i class="ri-arrow-down-s-line"></i></div>
+
+                <div class="step">
+                    <div class="circle purple">2</div>
+                    <h2>GET OFFER</h2>
+                    <p class="section__subheader">See how much you can earn right now instantly calculated from your
+                        social stats.</p>
+                </div>
+
+                <div class="arrow-left"><i class="ri-arrow-right-s-line"></i></div>
+                <div class="arrow-down"><i class="ri-arrow-down-s-line"></i></div>
+
+                <div class="step">
+                    <div class="circle blue">3</div>
+                    <h2>INITIATE TRANSACTION</h2>
+                    <p class="section__subheader">Cash out your earnings instantly straight to your favorite payment
+                        platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ALL ABOUT WHY CHOOSE US  -->
+    <section class="section__container explore__container">
+        <h2 class="section__header" id="reason-section">Why Choose Viral Vault?</h2>
+        <p class="section__subheader">
+            Why Viral Vault is the #1 Trusted Platform for Monetizing Social Media & Growing Your
+            Digital Income — Fast, Secure, and Built for Creators.
+        </p>
+
+        <div class="explore__grid">
+            <div class="explore__card">
+                <span><i class="ri-trademark-line"></i></span>
+                <h4>Best Rates</h4>
+                <p>
+                    Monetize your social media accounts at unbeatable rates and maximize your earnings.
+                    Earn more with a fast, secure, and hassle-free experience.
+                </p>
+                <a href="/login">Subscribe <i class="ri-arrow-right-line"></i></a>
+            </div>
+
+            <div class="explore__card act">
+                <span><i class="ri-exchange-dollar-line"></i></span>
+                <h4>Fast Payouts</h4>
+                <p>
+                    Monetize your social media with confidence and get paid quickly — no delays, no stress,
+                    just real cash in your account, secure, and always on time.
+                </p>
+                <a href="/login">Subscribe <i class="ri-arrow-right-line"></i></a>
+            </div>
+
+            <div class="explore__card">
+                <span><i class="ri-line-chart-fill"></i></span>
+                <h4>Secure Transactions</h4>
+                <p>
+                    No risks, no worries! We securely manage your earnings and investments, giving you a safe
+                    and hassle-free way to grow your digital income.
+                </p>
+                <a href="/login">Subscribe <i class="ri-arrow-right-line"></i></a>
+            </div>
+
+            <div class="explore__card">
+                <span><i class="ri-heart-2-line"></i></span>
+                <h4>24/7 Support</h4>
+                <p>
+                    Get expert assistance and step-by-step guidance to ensure a smooth and profitable social
+                    media monetization and investment experience.
+                </p>
+                <a href="/login">Subscribe <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ALL ABOUT WHAT WE BUY  -->
+    <section class="review section__container">
+        <h2 class="section__header">What We DO</h2>
+        <p class="section__subheader">
+            Viral Vault supports multiple monetization methods and investment strategies, ensuring you get the highest
+            returns with seamless, instant payouts
+        </p>
+        <br>
+
+        <div class="crypto-slide-container">
+            <div class="crypto-slide">
+                <img src="/images/social1.jpeg" alt="social media">
+                <img src="/images/social2.jpeg" alt="social media">
+                <img src="/images/social3.jpeg" alt="social media">
+                <img src="/images/social4.jpeg" alt="social media">
+                <img src="/images/social5.jpeg" alt="social media">
+                <img src="/images/social6.jpeg" alt="social media">
+                <img src="/images/social7.jpeg" alt="social media">
+                <img src="/images/social8.jpeg" alt="social media">
+                <img src="/images/social9.jpeg" alt="social media">
+                <img src="/images/social10.jpeg" alt="social media">
+                <!-- Duplicate for Infinite Scroll -->
+                <img src="/images/social1.jpeg" alt="social media">
+                <img src="/images/social2.jpeg" alt="social media">
+                <img src="/images/social3.jpeg" alt="social media">
+                <img src="/images/social4.jpeg" alt="social media">
+                <img src="/images/social5.jpeg" alt="social media">
+                <img src="/images/social6.jpeg" alt="social media">
+                <img src="/images/social7.jpeg" alt="social media">
+                <img src="/images/social8.jpeg" alt="social media">
+                <img src="/images/social9.jpeg" alt="social media">
+                <img src="/images/social10.jpeg" alt="social media">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ALL ABOUT FOLLOWISER  -->
+    <section class="review section__container">
+        <h2 class="section__header">AMAZING OFFER FOR YOU</h2>
+        <p class="section__subheader">
+            Unlock 950,000 followers once you get paid for monetizing your account with Viral Vault.
+            Monetize smarter and grow your audience effortlessly with Viral Vault’s powerful platform.
+        </p>
+        <br>
+
+        <div class="followers">
+            <div class="container">
+                <div class="step y-rotate">
+                    <div class="circle">950,000K</div>
+                    <h2>FOLLOWERS</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- ALL ABOUT HOW WE WORK  -->
+    <section class="review section__container">
+        <h2 class="section__header">How we work</h2>
+        <p class="section__subheader tall">
+            At Viral Vault, monetizing your social media and growing your wealth is quick, easy, and secure.
+            Whether you’re an influencer, content creator, or just starting out, we offer the best rates to help you earn from your online presence and invest smartly.
+        </p>
+        <br>
+
+        <section class="steps-section">
+            <!-- Step 1 -->
+            <div class="steps">
+                <div class="step-image">
+                    <img src="./images/step1.png" alt="Initiate">
+                </div>
+                <div class="step-content">
+                    <p class="step-number">Step - 01</p>
+                    <h3 class="step-title"><i class="ri-time-line"></i> Initiate</h3>
+                    <p class="tall">
+                        To start monetizing your social media or invest in digital income opportunities, simply sign up
+                        on our platform or reach out to us for personalized assistance.
+                        Our process is quick, secure, and hassle-free, making it easy for you to get started and begin
+                        earning instantly.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="steps reverse">
+                <div class="step-content">
+                    <p class="step-number">Step - 02</p>
+                    <h3 class="step-title"><i class="ri-restart-line"></i> Processing</h3>
+                    <p class="tall">
+                        Once you start monetizing your social media or investing, sit back and relax while we quickly
+                        process your earnings.
+                        If you need any assistance, our live chat support is available — reach out, and one of our
+                        dedicated team members will respond within minutes to assist you.
+                    </p>
+                </div>
+                <div class="step-image">
+                    <img src="./images/step2.png" alt="intitute">
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="steps">
+                <div class="step-image">
+                    <img src="./images/step3.png" alt="institute">
+                </div>
+                <div class="step-content">
+                    <p class="step-number">Step - 03</p>
+                    <h3 class="step-title"><i class="ri-money-dollar-circle-line"></i> Delivered</h3>
+                    <p class="tall">
+                        We offer the most competitive rates for monetizing your social media accounts and investment
+                        opportunities, ensuring you get the best value for your time and efforts.
+                        Our unbeatable pricing and fast delivery make us the top choice for creators and investors
+                        looking to earn quickly, securely, and profitably.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+
+
+
+
+    <!-- ALL ABOUT Frequently asked questions  -->
+    <section class="section__container">
+        <h2 class="section__header" id="about">Frequently asked Questions ?</h2>
+        <br>
+
+        <div class="faq-container">
+            <div class="faq-detail">
+                <p class="tall">
+                    We understand that you may have questions about how our platform works, how transactions are
+                    processed,
+                    and what to expect when using our services. This section is designed to provide clear and concise
+                    answers
+                    to some of the most common inquiries from our users.
+                </p>
+
+                <img src="./images/confused.png" alt="confused" class="confused">
+            </div>
+
+            <div class="faq-details">
+            
+                <div class="faq-item">
+                    <div class="faq-question">What social media do we accept?</div>
+                    <div class="faq-answer">
+                        We support a wide range of social media platforms for monetization, including: Instagram,
+                        TikTok, X (formerly Twitter), YouTube & Facebook.
+                        Whether you're an influencer, content creator, or just starting out, you can connect your
+                        account and start earning with Viral Vault.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How Can I Trust This?</div>
+                    <div class="faq-answer">
+                        At Viral Vault, we prioritize transparency, security, and results. Our platform is built by a
+                        team of experienced professionals dedicated to helping users monetize and invest with
+                        confidence.
+                        We've earned the trust of thousands of users through reliable payouts, secure systems, and
+                        real-time support.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Minimum of Investment</div>
+                    <div class="faq-answer">
+                        The minimum investment amount on Viral Vault is $20 (400% per month). 
+                        This low entry point allows anyone to start growing their digital income with ease, whether you're a beginner or a seasoned investor.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my transaction secure?</div>
+                    <div class="faq-answer">
+                        Absolutely. At Viral Vault, we use advanced encryption protocols and industry-standard security measures to protect all your transactions and personal information. 
+                        Our platform is built with multiple layers of protection to ensure your data and earnings are always safe. 
+                    </div>                    
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How long does it take to receive payment?</div>
+                    <div class="faq-answer">
+                        Payments are processed instantly once your monetization setup is complete or your investment
+                        action is confirmed.
+                        You’ll receive your funds immediately after the process is successfully completed.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I invest without monetizing?</div>
+                    <div class="faq-answer">
+                        Yes, you can! Viral Vault offers investment options that are open to everyone — even if you’re not monetizing a social media profile. Just sign up and choose an investment plan that fits your goals.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Do I need a large following to earn?</div>
+                    <div class="faq-answer">
+                        Not at all! Viral Vault supports creators at all levels. Whether you have 500 or 500,000 followers, we match you with the best monetization opportunities based on your engagement and platform.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Which countries do you support?</div>
+                    <div class="faq-answer">
+                        We support users globally! No matter where you're located, you can monetize your social media and invest through Viral Vault. 
+                        Payout methods may vary based on your region.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I start monetizing my social media?</div>
+                    <div class="faq-answer">
+                        Simply sign up on Viral Vault, connect your social media account(s), and choose a monetization or investment plan. 
+                        Our system will analyze your engagement and start generating earnings for you.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ALL ABOUT STRATEGIC ALLIANCES  -->
+    <section class="section__container">
+        <h2 class="section__header">STRATEGIC ALLIANCES</h2>
+        <p class="section__subheader">
+            Join the ever-growing world of social media monetization and investment.
+            Earn from your social platforms and grow your wealth at competitive rates with Viral Vault.
+            Our intuitive platform ensures a seamless experience, whether you're a beginner or an experienced creator
+            looking to maximize your income.
+        </p>
+        <br>
+
+        <div class="followers">
+            <div class="container">
+                <div class="step">
+                    <div class="circle">**INVEST</div>
+                    <h2>& LEAD .....</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ALL ABOUT Testimonials -->
+    <section class="review section__container">
+        <h2 class="section__header" id="Testimonials">Testimonials</h2>
+        <p class="section__subheader">
+            Unlock the potential of a rewarding partnership with Viral Vault, where innovation meets opportunity.
+            We believe in building strong relationships that empower creators and investors to achieve mutual growth and
+            success.
+        </p>
+        <br>
+
+        <div class="price__grid">
+
+            <div class="price__card">
+                <div class="price__card__content">
+                    <div class="review__rating">
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                    </div>
+                    <div class="user-wrapper">
+                        <img src="./images/user1.jpeg" alt="user" class="user">
+                    </div>
+                    <p class="name">Sophie Lane</p>
+                    <p class="store"><i class="ri-google-play-fill"></i>Play Store</p>
+                    <p>
+                        "Monetizing my followers & building wealth? Genius." </p>
+                </div>
+            </div>
+
+
+            <div class="price__card">
+                <div class="price__card__content">
+                    <div class="review__rating">
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-half-fill"></i></span>
+                    </div>
+                    <div class="user-wrapper">
+                        <img src="./images/user2.jpeg" alt="user" class="user">
+                    </div>
+                    <p class="name">Riley Cooper</p>
+                    <p class="store"><i class="ri-google-play-fill"></i>Play Store</p>
+                    <p>
+                        "Finally making money from my socials—this made it simple."
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="price__card">
+                <div class="price__card__content">
+                    <div class="review__rating">
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-half-fill"></i></span>
+                    </div>
+                    <div class="user-wrapper">
+                        <img src="./images/user3.jpeg" alt="user" class="user">
+                    </div>
+                    <p class="name">Chloe Bennett</p>
+                    <p class="store"><i class="ri-google-play-fill"></i>Play Store</p>
+                    <p>
+                        "Started small, but the returns from investing are real." </p>
+                </div>
+            </div>
+
+
+            <div class="price__card">
+                <div class="price__card__content">
+                    <div class="review__rating">
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                    </div>
+                    <div class="user-wrapper">
+                        <img src="./images/user4.jpeg" alt="user" class="user">
+                    </div>
+                    <p class="name">Liam James</p>
+                    <p class="store"><i class="ri-google-play-fill"></i>Play Store</p>
+                    <p>
+                        "I love how I can invest while growing my online presence." </p>
+                </div>
+            </div>
+
+
+            <div class="price__card">
+                <div class="price__card__content">
+                    <div class="review__rating">
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-fill"></i></span>
+                        <span><i class="ri-star-half-fill"></i></span>
+                    </div>
+                    <div class="user-wrapper">
+                        <img src="./images/user5.jpeg" alt="user" class="user">
+                    </div>
+                    <p class="name">Ava Monroe</p>
+                    <p class="store"><i class="ri-google-play-fill"></i>Play Store</p>
+                    <p>
+                        "It’s like having a money strategy built into my content." </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ALL ABOUT PAYMENTS  -->
+    <section class="section__container">
+        <h2 class="section__header" id="payments">PAYMENTS</h2>
+        <p class="section__subheader">
+            We offer fast, secure, and flexible payouts — supporting multiple payment methods to ensure you get paid conveniently, anytime and anywhere.
+            Whether it's bank transfer, mobile money, PayPal, or crypto, we've got you covered.
+        </p> <br>
+        <div class="slide-container">
+            <div class="slide">
+                <img src="./images/payment-1.webp" alt="payments">
+                <img src="./images/payment-2.webp" alt="payments">
+                <img src="./images/payment-3.webp" alt="payments">
+                <img src="./images/payment-4.webp" alt="payments">
+                <img src="./images/payment-5.webp" alt="payments">
+                <img src="./images/payment-7.webp" alt="payments">
+                <img src="./images/payment-8.webp" alt="payments">
+                <img src="./images/payment-9.webp" alt="payments">
+                <img src="./images/payment-10.webp" alt="payments">
+                <img src="./images/payment-11.webp" alt="payments">
+                <img src="./images/payment-1.webp" alt="payments">
+                <img src="./images/payment-2.webp" alt="payments">
+                <img src="./images/payment-3.webp" alt="payments">
+                <img src="./images/payment-4.webp" alt="payments">
+                <img src="./images/payment-5.webp" alt="payments">
+                <img src="./images/payment-7.webp" alt="payments">
+                <img src="./images/payment-8.webp" alt="payments">
+                <img src="./images/payment-9.webp" alt="payments">
+                <img src="./images/payment-10.webp" alt="payments">
+                <img src="./images/payment-11.webp" alt="payments">
+            </div>
+        </div>
+
+        <br>
+        <div class="crypto-slide-container pium">
+            <div class="crypto-slide">
+                <img src="/images/social1.jpeg" alt="social media">
+                <img src="/images/social2.jpeg" alt="social media">
+                <img src="/images/social3.jpeg" alt="social media">
+                <img src="/images/social4.jpeg" alt="social media">
+                <img src="/images/social5.jpeg" alt="social media">
+                <img src="/images/social6.jpeg" alt="social media">
+                <img src="/images/social7.jpeg" alt="social media">
+                <img src="/images/social8.jpeg" alt="social media">
+                <img src="/images/social9.jpeg" alt="social media">
+                <img src="/images/social10.jpeg" alt="social media">
+                <!-- Duplicate for Infinite Scroll -->
+                <img src="/images/social1.jpeg" alt="social media">
+                <img src="/images/social2.jpeg" alt="social media">
+                <img src="/images/social3.jpeg" alt="social media">
+                <img src="/images/social4.jpeg" alt="social media">
+                <img src="/images/social5.jpeg" alt="social media">
+                <img src="/images/social6.jpeg" alt="social media">
+                <img src="/images/social7.jpeg" alt="social media">
+                <img src="/images/social8.jpeg" alt="social media">
+                <img src="/images/social9.jpeg" alt="social media">
+                <img src="/images/social10.jpeg" alt="social media">
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ALL ABOUT WHERE TO GET US  -->
+    <section class="section__container">
+        <h2 class="section__header">Download Our App</h2>
+        <p class="section__subheader">
+            Earning from your social media or investing with Viral Vault is simple and straightforward.
+            Just sign up on our website or download the app, and you’ll be ready to start monetizing your accounts and growing your digital income in no time!
+        </p> <br>
+
+        <!-- <p class="tall">Trade on:</p> <br> -->
+        <div class="download-image">
+            <img src="./images/app store.jpg" alt="app store">
+            <img src="./images/play store.jpg" alt="play store">
+            <img src="./images/web app.jpg" alt="web app" class="web-app">
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" class="scroll-to-top-btn">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+
+
+
+    <!-- ALL ABOUT FOOTER SECTION  -->
+    <footer class="section__container footer__container">
+        <span class="footer__blur"></span>
+
+        <div class="footer__col">
+            <div class="footer__logo"><a href="/"><img src="images/logo.png" alt="logo" /></a></div>
+            <p>
+                Welcome to Viral Vault — the #1 platform for social media monetization and smart digital investment.
+                We help creators and individuals turn their social media accounts into income streams and grow their wealth through flexible investment options.
+                Join thousands of users already earning and investing with ease.
+            </p>
+            <div class="footer__socials">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-fill"></i></a>
+                <a href="#"><i class="ri-youtube-line"></i></a>
+                <a href="#"><i class="ri-tiktok-fill"></i></a>
+            </div>
+        </div>
+        <div class="footer__col cool">
+            <h4>Company</h4>
+            <a href="#">Tiktok</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Youtube</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div class="footer__col cool">
+            <h4>Contact</h4>
+            <a href="#">T & C</a>
+            <a href="/login">Contact Us</a>
+            <a href="/login">Privacy Policy</a>
+            <a href="/login">BMI Calculator</a>
+        </div>
+        <div class="footer__col cool">
+            <h4>About Us</h4>
+            <a href="/login">Blogs</a>
+            <a href="/login">Security</a>
+            <a href="/login">Careers</a>
+            <a href="/calculator">Card Rates</a>
+        </div>
+    </footer>
+
+    <div class="footer__bar">
+        <p>Copyright © 2017 Web Design Mastery. All rights reserved.</p>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+
+
+
+
+    <!-- FOR MY MANIFEST  -->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/index.js"></script>
+    <script src="/js/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0d0d0d">
+    <title>social-task</title>
+    <link rel="icon" href="/images/favicon.jpeg" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/social-task.css">
+</head>
+
+<body>
+    <!-- BACKGROUND BLUR -->
+    <span class="bg__blur"></span>
+
+    <div class="container">
+        <!-- Main content -->
+        <main class="main-content">
+           
+            <div class="contents">
+                <%- include('partials/social') %>
+                <%- include('partials/referal') %>
+            </div>
+
+        </main>
+    </div>
+    <!-- BACKGROUND BLUR -->
+    <span class="footer__blur"></span>
+
+
+    <!-- FOR MY MANIFEST  -->
+    <script src="/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+
+</html>

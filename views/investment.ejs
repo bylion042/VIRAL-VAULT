@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1a1a">
+  <title>investment</title>
+    <link rel="icon" href="/images/favicon.jpeg" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="/css/investment.css">
+</head>
+
+<body>
+  <div class="container">
+    <%- include ('partials/sidebar') %>
+
+
+      <!-- Main content -->
+      <main class="main-content">
+
+        <div class="dashboard">
+          <div class="header">
+            <h2>Invest</h2>
+            <div class="toggle">
+              <button id="investBtn" class="active">Investments Plan</button>
+              <button id="sampleBtn">Plan Samples</button>
+            </div>
+
+            <div class="total">
+              <h3>Balance</h3>
+              <!-- Display the balance dynamically -->
+              <h1>$<%= balance.toFixed(2) %></h1>
+            </div>
+
+          </div>
+
+          <div class="chart">
+            <!-- Mocked curve chart with highlight dot -->
+            <svg viewBox="0 0 300 100" class="curve">
+              <path d="M0,80 C50,60 100,20 150,40 C200,60 250,30 300,70" fill="none" stroke="#c5a057"
+                stroke-width="3" />
+              <circle cx="170" cy="45" r="5" fill="#fff" stroke="#c5a057" stroke-width="1" />
+              <text x="180" y="35" fill="#00ff88" font-size="10px">$472.65</text>
+            </svg>
+            <div class="days" id="days">
+              <span>Sun</span>
+              <span>Mon</span>
+              <span>Tue</span>
+              <span>Wed</span>
+              <span>Thu</span>
+              <span>Fri</span>
+              <span>Sat</span>
+            </div>
+          </div>
+
+
+
+
+          <!-- INVESTMENT PLANS  -->
+          <div class="invest-plan">
+            <h2>INVESTMENTS PLAN</h2>
+            <div class="investment-card">
+              <h3>Need to know</h3>
+              <p>
+                Invest from as little as <strong>$20</strong> and earn up to <strong>400% monthly returns</strong>.
+                We use high-frequency trading to generate profits, ensuring your returns while sharing in the success.
+              </p>
+
+              <div class="contain">
+                <input type="number" id="investAmount" placeholder="Minimum $20" min="20" />
+                <button onclick="calculateReturn()">Invest Now</button>
+              </div>
+            </div>
+
+            <div class="piggy">
+              <img src="/images/piggy1.png" alt="piggy bank">
+            </div>
+          </div>
+
+
+          <!-- pLAN SAMPEL  -->
+          <div class="categories" style="display: none;">
+            <h2>PLAN SAMPLES</h2>
+
+            <!-- item 1 -->
+            <div class="item">
+              <div>
+                <span>Invest</span>
+                <small>400% Discount</small>
+              </div>
+              <div class="chat">
+                <canvas id="chat1" width="100" height="50"></canvas>
+              </div>
+              <div>
+                <div class="rate">$100</div>
+                <small class="percent"> You get <strong>$500</strong> </small>
+              </div>
+            </div>
+
+            <!-- item 2 -->
+            <div class="item">
+              <div>
+                <span>Invest</span>
+                <small>400% Discount</small>
+              </div>
+              <div class="chat">
+                <canvas id="chat2" width="100" height="50"></canvas>
+              </div>
+              <div>
+                <div class="rate">$300</div>
+                <small class="percent"> You get <strong>$700</strong> </small>
+              </div>
+            </div>
+
+            <!-- item 3 -->
+            <div class="item">
+              <div>
+                <span>Invest</span>
+                <small>400% Discount</small>
+              </div>
+              <div class="chat">
+                <canvas id="chat3" width="100" height="50"></canvas>
+              </div>
+              <div>
+                <div class="rate">$500</div>
+                <small class="percent"> You get <strong>$1000</strong> </small>
+              </div>
+            </div>
+
+            <!-- item 4 -->
+            <div class="item">
+              <div>
+                <span>Invest</span>
+                <small>500% Discount</small>
+              </div>
+              <div class="chat">
+                <canvas id="chat4" width="100" height="50"></canvas>
+              </div>
+              <div>
+                <div class="rate">$800</div>
+                <small class="percent"> You get <strong>$1300</strong> </small>
+              </div>
+            </div>
+
+            <!-- item 5 -->
+            <div class="item">
+              <div>
+                <span>Invest</span>
+                <small>800% Discount</small>
+              </div>
+              <div class="chat">
+                <canvas id="chat5" width="100" height="50"></canvas>
+              </div>
+              <div>
+                <div class="rate">$1000</div>
+                <small class="percent"> You get <strong>$1800</strong> </small>
+              </div>
+            </div>
+
+
+            <div class="piggy">
+              <img src="/images/piggy1.png" alt="piggy bank">
+            </div>
+          </div>
+        </div>
+      </main>
+  </div>
+
+
+
+  <!-- Flutterwave Checkout Script -->
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+  <script>
+    const userEmail = "<%= email %>";  // Pass the email to the frontend JavaScript
+
+    function calculateReturn() {
+      const amount = parseFloat(document.getElementById("investAmount").value);
+
+      if (isNaN(amount) || amount < 20) {
+        Toastify({
+          text: "Minimum investment is $20.",
+          duration: 5000,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "#f15454",
+          stopOnFocus: true,
+        }).showToast();
+        return;
+      }
+
+      // Show projected return
+      const returnAmount = amount * 4; // 400% monthly
+      Toastify({
+        text: `Receive $${returnAmount.toFixed(2)} in returns per month.`,
+        duration: 5000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#4CAF50",
+        stopOnFocus: true,
+      }).showToast();
+
+      // Start Flutterwave payment
+      FlutterwaveCheckout({
+        public_key: "FLWPUBK-afdb2b4c8418a52f312bf7de3eeef9e5-X", // Your actual Flutterwave public key
+        tx_ref: "tx-" + Date.now(),
+        amount: amount,
+        currency: "USD",
+        customer: {
+          email: userEmail,  // Dynamically use logged-in user's email
+        },
+        payment_options: "card, banktransfer, ussd, account, mobilemoneyghana, mobilemoneyuganda, mobilemoneyrwanda, mobilemoneyzambia, mobilemoneyfranco, mpesa, credit",
+        callback: function (paymentData) {
+          verifyPayment(paymentData.transaction_id, userEmail);
+        },
+        onclose: function () {
+          console.log("Checkout closed");
+        },
+        customizations: {
+          title: "Investment Payment",
+          description: "Payment for investment plan",
+          logo: "https://i.postimg.cc/W1XcxPmD/favicon.jpg",
+        },
+      });
+    }
+
+    async function verifyPayment(transactionId, email) {
+      try {
+        const response = await fetch("/api/payment/verify-payment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ transaction_id: transactionId, email }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          document.querySelector(".total h1").textContent = `$${result.newBalance.toFixed(2)}`;
+          Toastify({
+            text: "Payment successful! Balance updated.",
+            duration: 5000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#4CAF50",
+            stopOnFocus: true,
+          }).showToast();
+        } else {
+          Toastify({
+            text: "Payment verification failed.",
+            duration: 5000,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#f15454",
+            stopOnFocus: true,
+          }).showToast();
+        }
+      } catch (err) {
+        console.error(err);
+        Toastify({
+          text: "Error verifying payment.",
+          duration: 5000,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "#f15454",
+          stopOnFocus: true,
+        }).showToast();
+      }
+    }
+  </script>
+
+
+  <!-- FOR MY MANIFEST  -->
+  <script src="/js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/js/dashboard.js"></script>
+  <script src="/js/investment.js"></script>
+</body>
+
+</html>
