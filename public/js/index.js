@@ -66,21 +66,21 @@ document.addEventListener("DOMContentLoaded", () => {
   //  POPS UP ONCE YOU ARE IN THE WEB 
   window.onload = function () {
     const messages = [
-      "Welcome to Gift Card Wave!",
-      "Sell your gift cards and crypto with ease.",
-      "Get paid instantly for your digital assets.",
-      "Turn unused gift cards into real cash today!",
-      "With Astro_Trade, capital won't be your problem.",
-      "Fast, secure, and hassle-free transactions.",
-      "Your trusted platform for digital asset exchange.",
-      "Sell smart, earn fast with Gift Card Wave.",
-      "No waiting, no stress—just instant payments.",
-      "We offer the best rates for gift cards & crypto.",
-      "Don't let your assets sit idle—cash out now!",
-      "Gift Card Wave: The future of seamless trading.",
-      "Safe, reliable, and rewarding transactions.",
-      "Your money, your way—trade with confidence.",
-      "Join Gift Card Wave and start earning today!",
+      "Welcome to Viral Vault!",
+  "Invest smart, monetize your influence.",
+  "Earn daily returns and grow your online presence.",
+  "Your vault for digital income and opportunities.",
+  "Turn your social activity into real cash.",
+  "With Viral Vault, your content pays you back.",
+  "A smarter way to invest and monetize online.",
+  "Start small, grow big—invest and earn daily.",
+  "Cash in on your social time with Viral Vault.",
+  "The future of investing meets creator monetization.",
+  "Don’t scroll for free—get paid to engage.",
+  "Build your digital wealth, one click at a time.",
+  "Secure, rewarding, and user-focused.",
+  "Your gateway to online income and financial freedom.",
+  "Join Viral Vault and turn influence into income!"
     ];
   
     let messageIndex = 0;
